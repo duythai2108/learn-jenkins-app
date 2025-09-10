@@ -32,6 +32,8 @@ pipeline {
                 sh '''
                     test -f buid/index.html
                     npm test
+                    set -ex
+                    export NPM_CONFIG_CACHE=$(pwd)/.npm-cache
                  '''
             }
         }
